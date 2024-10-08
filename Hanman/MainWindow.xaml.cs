@@ -23,6 +23,56 @@ namespace Hanman
         public MainWindow()
         {
             InitializeComponent();
+            starGame();
+        }
+
+        int vie;
+        string GuessWord;
+        char[] HiddenTab;
+        string MotIntern;
+        
+        
+        public void starGame()
+        {
+            List<string> listMot = new List<string>{ "voiture", "maison", "garage", "portail", "ordinateur" };
+            Random rand = new Random();
+            int i =  rand.Next(listMot.Count);
+            GuessWord = listMot[i].ToUpper();
+
+            MotIntern = new string('*', GuessWord.Length);
+            TB_Display.Text = MotIntern;
+            vie = 5;
+        }
+
+        private void BTN_Click(object sender, RoutedEventArgs e)
+        {
+
+            Button btn = sender as Button;
+            string lett = btn.Content.ToString();
+
+            if (verificationWord(lett) == true)
+            {
+                int index = GuessWord.IndexOf(lett);
+                MotIntern = MotIntern.Remove(index, 1).Insert(index, lett);
+            }
+            else
+            {
+                vie--;
+            }
+            TB_Display.Text = MotIntern;
+        }
+
+
+        public bool verificationWord(string letter) {
+         
+            if (GuessWord.Contains(letter))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
