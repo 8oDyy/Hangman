@@ -30,13 +30,13 @@ namespace Hanman
         string GuessWord;
         char[] HiddenTab;
         string MotIntern;
-        
-        
+
+
         public void starGame()
         {
-            List<string> listMot = new List<string>{ "voiture", "maison", "garage", "portail", "ordinateur" };
+            List<string> listMot = new List<string> { "garage" }; //, "portail", "ordinateur", "voiture", "maison", };
             Random rand = new Random();
-            int i =  rand.Next(listMot.Count);
+            int i = rand.Next(listMot.Count);
             GuessWord = listMot[i].ToUpper();
 
             MotIntern = new string('*', GuessWord.Length);
@@ -49,30 +49,33 @@ namespace Hanman
 
             Button btn = sender as Button;
             string lett = btn.Content.ToString();
+            int index = 0;
 
-            if (verificationWord(lett) == true)
+            if (GuessWord.Contains(lett))
             {
-                int index = GuessWord.IndexOf(lett);
-                MotIntern = MotIntern.Remove(index, 1).Insert(index, lett);
+                foreach (var l in GuessWord)
+                {
+                    if (l.ToString() == lett)
+                    {
+                        //int index = GuessWord.IndexOf(lett);
+                        MotIntern = MotIntern.Remove(index, 1).Insert(index, lett);
+                        TB_Display.Text = MotIntern;
+                        
+                    }
+                    index++;
+
+
+                }
+            
             }
             else
             {
                 vie--;
             }
-            TB_Display.Text = MotIntern;
         }
 
 
-        public bool verificationWord(string letter) {
-         
-            if (GuessWord.Contains(letter))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
+
     }
 }
