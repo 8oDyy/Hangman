@@ -94,5 +94,50 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\letter\letter.png" />
+    <Resource Include="Assets\letter\letter_A.png" />
+    <Resource Include="Assets\letter\letter_B.png" />
+    <Resource Include="Assets\letter\letter_C.png" />
+    <Resource Include="Assets\letter\letter_D.png" />
+    <Resource Include="Assets\letter\letter_E.png" />
+    <Resource Include="Assets\letter\letter_F.png" />
+    <Resource Include="Assets\letter\letter_G.png" />
+    <Resource Include="Assets\letter\letter_H.png" />
+    <Resource Include="Assets\letter\letter_I.png" />
+    <Resource Include="Assets\letter\letter_J.png" />
+    <Resource Include="Assets\letter\letter_K.png" />
+    <Resource Include="Assets\letter\letter_L.png" />
+    <Resource Include="Assets\letter\letter_M.png" />
+    <Resource Include="Assets\letter\letter_N.png" />
+    <Resource Include="Assets\letter\letter_O.png" />
+    <Resource Include="Assets\letter\letter_P.png" />
+    <Resource Include="Assets\letter\letter_Q.png" />
+    <Resource Include="Assets\letter\letter_R.png" />
+    <Resource Include="Assets\letter\letter_S.png" />
+    <Resource Include="Assets\letter\letter_T.png" />
+    <Resource Include="Assets\letter\letter_U.png" />
+    <Resource Include="Assets\letter\letter_V.png" />
+    <Resource Include="Assets\letter\letter_W.png" />
+    <Resource Include="Assets\letter\letter_X.png" />
+    <Resource Include="Assets\letter\letter_Y.png" />
+    <Resource Include="Assets\letter\letter_Z.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\character\character_1.png" />
+    <Resource Include="Assets\character\character_2.png" />
+    <Resource Include="Assets\character\character_3.png" />
+    <Resource Include="Assets\character\character_4.png" />
+    <Resource Include="Assets\character\character_5.png" />
+    <Resource Include="Assets\character\character_empty.png" />
+    <Resource Include="Assets\character\lose.png" />
+    <Resource Include="Assets\character\win.png" />
+    <Resource Include="Assets\letter\pause.png" />
+    <Resource Include="Assets\background\background.jpg" />
+    <Content Include="Assets\song\click_001.ogg" />
+    <Content Include="Assets\song\confirmation_004.ogg" />
+    <Content Include="Assets\song\error_008.ogg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

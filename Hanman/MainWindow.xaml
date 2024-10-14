@@ -6,7 +6,12 @@
         xmlns:local="clr-namespace:Hanman"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    
+    
     <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="UniformToFill" ImageSource="Assets/background/background.jpg" AlignmentY="Top" AlignmentX="Center" />
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"></RowDefinition>
             <RowDefinition Height="6*"></RowDefinition>
@@ -44,7 +49,7 @@
 
         <!-- Zone Title-->
         <Grid Grid.Row="0">
-            <TextBlock FontFamily="Playbill" Text="HUNGMAN" FontSize="80" Margin="30, 0, 0, 0"></TextBlock>
+            <TextBlock FontFamily="Playbill" Text="HANGMAN" FontSize="80" Margin="30, 0, 0, 0"></TextBlock>
         </Grid>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -61,6 +66,10 @@
                 <ColumnDefinition Width="6*"></ColumnDefinition>
                 <ColumnDefinition Width="4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Image Width="200" Source="Assets/character/character_empty.png"></Image>
+            </Grid>
             <!-- Zone Keypad-->
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -82,32 +91,84 @@
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Button Grid.Row="0" Grid.Column="1" Name="BTN_A" Content="A" Click="BTN_Click"></Button>
-                <Button Grid.Row="0" Grid.Column="2" Name="BTN_B" Content="B" Click="BTN_Click"></Button>
-                <Button Grid.Row="0" Grid.Column="3" Name="BTN_C" Content="C" Click="BTN_Click"></Button>
-                <Button Grid.Row="0" Grid.Column="4" Name="BTN_D" Content="D" Click="BTN_Click"></Button>
-                <Button Grid.Row="1" Grid.Column="1" Name="BTN_E" Content="E" Click="BTN_Click"></Button>
-                <Button Grid.Row="1" Grid.Column="2" Name="BTN_F" Content="F" Click="BTN_Click"></Button>
-                <Button Grid.Row="1" Grid.Column="3" Name="BTN_G" Content="G" Click="BTN_Click"></Button>
-                <Button Grid.Row="1" Grid.Column="4" Name="BTN_H" Content="H" Click="BTN_Click"></Button>
-                <Button Grid.Row="2" Grid.Column="1" Name="BTN_I" Content="I" Click="BTN_Click"></Button>
-                <Button Grid.Row="2" Grid.Column="2" Name="BTN_J" Content="J" Click="BTN_Click"></Button>
-                <Button Grid.Row="2" Grid.Column="3" Name="BTN_K" Content="K" Click="BTN_Click"></Button>
-                <Button Grid.Row="2" Grid.Column="4" Name="BTN_L" Content="L" Click="BTN_Click"></Button>
-                <Button Grid.Row="3" Grid.Column="1" Name="BTN_M" Content="M" Click="BTN_Click"></Button>
-                <Button Grid.Row="3" Grid.Column="2" Name="BTN_N" Content="N" Click="BTN_Click"></Button>
-                <Button Grid.Row="3" Grid.Column="3" Name="BTN_O" Content="O" Click="BTN_Click"></Button>
-                <Button Grid.Row="3" Grid.Column="4" Name="BTN_P" Content="P" Click="BTN_Click"></Button>
-                <Button Grid.Row="4" Grid.Column="1" Name="BTN_Q" Content="Q" Click="BTN_Click"></Button>
-                <Button Grid.Row="4" Grid.Column="2" Name="BTN_R" Content="R" Click="BTN_Click"></Button>
-                <Button Grid.Row="4" Grid.Column="3" Name="BTN_S" Content="S" Click="BTN_Click"></Button>
-                <Button Grid.Row="4" Grid.Column="4" Name="BTN_T" Content="T" Click="BTN_Click"></Button>
-                <Button Grid.Row="5" Grid.Column="1" Name="BTN_U" Content="U" Click="BTN_Click"></Button>
-                <Button Grid.Row="5" Grid.Column="2" Name="BTN_V" Content="V" Click="BTN_Click"></Button>
-                <Button Grid.Row="5" Grid.Column="3" Name="BTN_W" Content="W" Click="BTN_Click"></Button>
-                <Button Grid.Row="5" Grid.Column="4" Name="BTN_X" Content="X" Click="BTN_Click"></Button>
-                <Button Grid.Row="6" Grid.Column="2" Name="BTN_Y" Content="Y" Click="BTN_Click"></Button>
-                <Button Grid.Row="6" Grid.Column="3" Name="BTN_Z" Content="Z" Click="BTN_Click"></Button>
+                <Button Grid.Row="0" Grid.Column="1" Name="A" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_A.png"></Image>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="2" Name="B" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_B.png"></Image>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="3" Name="C" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_C.png"></Image>
+                </Button>
+                <Button Grid.Row="0" Grid.Column="4" Name="D" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_D.png"></Image>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="1" Name="E" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_E.png"></Image>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="2" Name="F" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_F.png"></Image>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="3" Name="G" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_G.png"></Image>
+                </Button>
+                <Button Grid.Row="1" Grid.Column="4" Name="H" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_H.png"></Image>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="1" Name="I" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_I.png"></Image>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="2" Name="J" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_J.png"></Image>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="3" Name="K" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_K.png"></Image>
+                </Button>
+                <Button Grid.Row="2" Grid.Column="4" Name="L" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_L.png"></Image>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="1" Name="M" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_M.png"></Image>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="2" Name="N" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_N.png"></Image>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="3" Name="O" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_O.png"></Image>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="4" Name="P" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_P.png"></Image>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="1" Name="Q" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_Q.png"></Image>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="2" Name="R" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_R.png"></Image>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="3" Name="S" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_S.png"></Image>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="4" Name="T" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_T.png"></Image>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="1" Name="U" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_U.png"></Image>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="2" Name="V" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_V.png"></Image>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="3" Name="W" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_W.png"></Image>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="4" Name="X" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_X.png"></Image>
+                </Button>
+                <Button Grid.Row="6" Grid.Column="2" Name="Y" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_Y.png"></Image>
+                </Button>
+                <Button Grid.Row="6" Grid.Column="3" Name="Z" Click="BTN_Click">
+                    <Image Source="Assets/letter/letter_Z.png"></Image>
+                </Button>
             </Grid>
         </Grid>
 

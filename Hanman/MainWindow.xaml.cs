@@ -41,13 +41,13 @@ namespace Hanman
 
             MotIntern = new string('*', GuessWord.Length);
             TB_Display.Text = MotIntern;
-            vie = 5;
+            vie = 0;
         }
 
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
             Button btn = sender as Button;
-            string lett = btn.Content.ToString();
+            string lett = btn.Name.ToString();
             btn.IsEnabled = false;
             int index = 0;
 
@@ -65,7 +65,7 @@ namespace Hanman
             }
             else
             {
-                vie--;
+                vie++;
             }
         }
     }
