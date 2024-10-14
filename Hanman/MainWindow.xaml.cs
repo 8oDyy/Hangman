@@ -41,22 +41,22 @@ namespace Hanman
         public void starGame()
         {
             List<string> listMot = new List<string> {"vive"};
-            //using (var MyFile = File.OpenText(@"Assets/mots_aleatoires.txt"))
-            //{
-            //    string txtcontent = MyFile.ReadLine();
-            //    int linenb = 0;
-            //    do
-            //    {
-            //        txtcontent = MyFile.ReadLine();
-            //        listMot.Add(txtcontent);
-            //        linenb++;
-            //    } while (txtcontent != null);
-            //}
+            using (var MyFile = File.OpenText(@"Assets/mots_aleatoires.txt")) // mise en place du dictionaire
+            {
+                string txtcontent = MyFile.ReadLine();
+                int linenb = 0;
+                do
+                {
+                    txtcontent = MyFile.ReadLine();
+                    listMot.Add(txtcontent); // ajout des mots dans la liste
+                    linenb++;
+                } while (txtcontent != null);
+            }
 
-            Random rand = new Random();
+            Random rand = new Random(); //choix du mot
             int i = rand.Next(listMot.Count);
             GuessWord = listMot[i].ToUpper();
-
+            //initalisation du mot, des vie et de l'image
             MotIntern = new string('*', GuessWord.Length);
             TB_Display.Text = MotIntern;
             vie = 0;
@@ -66,6 +66,7 @@ namespace Hanman
 
         }
 
+        //event click sur les boutons
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
             clickSound.Play();
@@ -89,7 +90,7 @@ namespace Hanman
                     correctSound.Play();
                     correctSound.Position = TimeSpan.Zero;
                 }
-                if (GuessWord == MotIntern)
+                if (GuessWord == MotIntern) // si le joueur a gagné
                 {
                     Uri ressource = new Uri("Assets/character/win.png", UriKind.Relative);
                     ImgPendu.Source = new BitmapImage(ressource);
@@ -100,7 +101,7 @@ namespace Hanman
                 }
                 
             }
-            else
+            else //changement de charactere si le joueur a faux
             {
                 errorSound.Play();
                 errorSound.Position = TimeSpan.Zero;
@@ -108,7 +109,7 @@ namespace Hanman
                 Uri ressource = new Uri("Assets/character/character_" + vie + ".png", UriKind.Relative);
                 ImgPendu.Source = new BitmapImage(ressource);
             }
-            if (vie == 6)
+            if (vie == 6) // si le joueur a perdu
             {
                 Uri ressource = new Uri("Assets/character/lose.png", UriKind.Relative);
                 ImgPendu.Source = new BitmapImage(ressource);
@@ -116,6 +117,7 @@ namespace Hanman
                 starGame();
             }
         }
+        //fonction pour charger les sons
 
         public void loadsound()
         {
@@ -129,7 +131,7 @@ namespace Hanman
             winningSound.Open(new Uri("Assets/song/winning.mp3", UriKind.Relative));
         }
 
-
+        //fonction pour reactiver les boutons
         public void activateBtn()
         {
             foreach( var elm in Grd_Keypad.Children)

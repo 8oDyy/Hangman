@@ -90,7 +90,7 @@
                     <RowDefinition Height="*"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
-
+                <!-- Creation Button -->
                 <Button Grid.Row="0" Grid.Column="1" Name="A" Click="BTN_Click">
                     <Image Source="Assets/letter/letter_A.png"></Image>
                 </Button>
@@ -176,6 +176,5 @@
         <TextBlock Grid.Row="2"  Name="TB_Display" FontSize="40" Margin="150,0,0,0"></TextBlock>
 
         <!-- Zone Footer-->
-        
     </Grid>
 </Window>
