@@ -46,9 +46,9 @@ namespace Hanman
 
         private void BTN_Click(object sender, RoutedEventArgs e)
         {
-
             Button btn = sender as Button;
             string lett = btn.Content.ToString();
+            btn.IsEnabled = false;
             int index = 0;
 
             if (GuessWord.Contains(lett))
@@ -57,25 +57,16 @@ namespace Hanman
                 {
                     if (l.ToString() == lett)
                     {
-                        //int index = GuessWord.IndexOf(lett);
                         MotIntern = MotIntern.Remove(index, 1).Insert(index, lett);
-                        TB_Display.Text = MotIntern;
-                        
+                        TB_Display.Text = MotIntern;    
                     }
                     index++;
-
-
                 }
-            
             }
             else
             {
                 vie--;
             }
         }
-
-
-
-
     }
 }
