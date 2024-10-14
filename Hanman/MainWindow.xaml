@@ -68,10 +68,10 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
-                <Image Width="200" Source="Assets/character/character_empty.png"></Image>
+                <Image x:Name="ImgPendu" Width="200" Source="Assets/character/character_empty.png"></Image>
             </Grid>
             <!-- Zone Keypad-->
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Name="Grd_Keypad">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"></ColumnDefinition>
                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -173,7 +173,7 @@
         </Grid>
 
         <!-- Zone Display-->
-        <TextBlock Grid.Row="2"  Name="TB_Display" FontSize="40"></TextBlock>
+        <TextBlock Grid.Row="2"  Name="TB_Display" FontSize="40" Margin="150,0,0,0"></TextBlock>
 
         <!-- Zone Footer-->
         

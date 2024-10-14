@@ -134,10 +134,23 @@
     <Resource Include="Assets\character\win.png" />
     <Resource Include="Assets\letter\pause.png" />
     <Resource Include="Assets\background\background.jpg" />
-    <Content Include="Assets\song\click_001.ogg" />
-    <Content Include="Assets\song\confirmation_004.ogg" />
-    <Content Include="Assets\song\error_008.ogg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Assets\mots_aleatoires.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Assets\song\winning.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\song\click_2.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\song\error_008.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Assets\song\confirmation_004.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
