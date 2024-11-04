@@ -139,6 +139,9 @@
     <Content Include="Assets\mots_aleatoires.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Assets\song\lose.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Assets\song\winning.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

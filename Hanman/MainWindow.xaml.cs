@@ -25,8 +25,8 @@ namespace Hanman
         public MainWindow()
         {
             InitializeComponent();
-            starGame();
             loadsound();
+            starGame();
         }
 
         int vie;
@@ -37,6 +37,7 @@ namespace Hanman
         private MediaPlayer correctSound;
         private MediaPlayer clickSound;
         public MediaPlayer winningSound;
+        public MediaPlayer losingSound;
 
         public void starGame()
         {
@@ -63,7 +64,6 @@ namespace Hanman
             activateBtn();
             Uri ressource = new Uri("Assets/character/character_empty.png", UriKind.Relative);
             ImgPendu.Source = new BitmapImage(ressource);
-
         }
 
         //event click sur les boutons
@@ -113,8 +113,7 @@ namespace Hanman
             {
                 Uri ressource = new Uri("Assets/character/lose.png", UriKind.Relative);
                 ImgPendu.Source = new BitmapImage(ressource);
-                MessageBox.Show("Vous avez perdu !");
-                starGame();
+                LosingEffect();
             }
         }
         //fonction pour charger les sons
@@ -129,6 +128,16 @@ namespace Hanman
             clickSound.Open(new Uri("Assets/song/click_2.mp3", UriKind.Relative));
             winningSound = new MediaPlayer();
             winningSound.Open(new Uri("Assets/song/winning.mp3", UriKind.Relative));
+            losingSound = new MediaPlayer();
+            losingSound.Open(new Uri("Assets/song/lose.mp3", UriKind.Relative));
+        }
+
+        private async void LosingEffect()
+        {
+            losingSound.MediaEnded += (s, e) => { losingSound.Position = TimeSpan.Zero; };
+            losingSound.Play();
+            await Task.Delay(2500);
+            MessageBox.Show("Vous avez perdu !");
         }
 
         //fonction pour reactiver les boutons
